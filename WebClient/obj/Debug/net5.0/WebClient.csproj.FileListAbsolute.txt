@@ -1,0 +1,16 @@
+C:\Users\Nicolas\Source\Repos\dotnetdev.homework.7\src\WebClient\bin\Debug\net5.0\WebClient.exe
+C:\Users\Nicolas\Source\Repos\dotnetdev.homework.7\src\WebClient\bin\Debug\net5.0\WebClient.deps.json
+C:\Users\Nicolas\Source\Repos\dotnetdev.homework.7\src\WebClient\bin\Debug\net5.0\WebClient.runtimeconfig.json
+C:\Users\Nicolas\Source\Repos\dotnetdev.homework.7\src\WebClient\bin\Debug\net5.0\WebClient.runtimeconfig.dev.json
+C:\Users\Nicolas\Source\Repos\dotnetdev.homework.7\src\WebClient\bin\Debug\net5.0\WebClient.dll
+C:\Users\Nicolas\Source\Repos\dotnetdev.homework.7\src\WebClient\bin\Debug\net5.0\WebClient.pdb
+C:\Users\Nicolas\Source\Repos\dotnetdev.homework.7\src\WebClient\obj\Debug\net5.0\WebClient.csproj.AssemblyReference.cache
+C:\Users\Nicolas\Source\Repos\dotnetdev.homework.7\src\WebClient\obj\Debug\net5.0\WebClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nicolas\Source\Repos\dotnetdev.homework.7\src\WebClient\obj\Debug\net5.0\WebClient.AssemblyInfoInputs.cache
+C:\Users\Nicolas\Source\Repos\dotnetdev.homework.7\src\WebClient\obj\Debug\net5.0\WebClient.AssemblyInfo.cs
+C:\Users\Nicolas\Source\Repos\dotnetdev.homework.7\src\WebClient\obj\Debug\net5.0\WebClient.csproj.CoreCompileInputs.cache
+C:\Users\Nicolas\Source\Repos\dotnetdev.homework.7\src\WebClient\obj\Debug\net5.0\WebClient.dll
+C:\Users\Nicolas\Source\Repos\dotnetdev.homework.7\src\WebClient\obj\Debug\net5.0\refint\WebClient.dll
+C:\Users\Nicolas\Source\Repos\dotnetdev.homework.7\src\WebClient\obj\Debug\net5.0\WebClient.pdb
+C:\Users\Nicolas\Source\Repos\dotnetdev.homework.7\src\WebClient\obj\Debug\net5.0\WebClient.genruntimeconfig.cache
+C:\Users\Nicolas\Source\Repos\dotnetdev.homework.7\src\WebClient\obj\Debug\net5.0\ref\WebClient.dll
