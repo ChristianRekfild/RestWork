@@ -65,7 +65,7 @@ namespace WebClient
         private static CustomerCreateRequest GetCustomerById(int id)
         {
             HttpResponseMessage response = client.GetAsync(
-                $"http://localhost:5000/customers/{id}").Result;
+                $"http://localhost:5000/customers/{id}").Result; 
 
             Customer customer = response.Content.ReadFromJsonAsync<Customer>().Result;
 
