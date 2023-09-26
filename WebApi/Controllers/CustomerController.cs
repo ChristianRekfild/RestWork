@@ -11,26 +11,24 @@ namespace WebApi.Controllers
     public class CustomerController : Controller
     {
         [HttpGet("{id:long}")]
-        public async Task<Customer> GetCustomerAsync([FromRoute] long id)
+        public async Task<IActionResult> GetCustomerAsync([FromRoute] long id)
         {
             Customer customer = Storage.GetCustomers().FirstOrDefault(x => x.Id == id);
+            if (customer is null) return NotFound();
 
-            return customer;
+            return Ok(customer);
         }
 
         [HttpPost("")]
-        public async Task<long> CreateCustomerAsync([FromBody] Customer customer)
+        public async Task<IActionResult> CreateCustomerAsync([FromBody] Customer customer)
         {
-            long newId = Storage.GetCustomers().Max(x => x.Id) + 1;
+            var existsCustomer = Storage.GetCustomers().FirstOrDefault(x => x.Id == customer.Id);
+            if (existsCustomer != null)
+                return StatusCode(409);
 
-            Storage.AddCustomer(new Customer()
-            {
-                Id = newId,
-                Firstname = customer.Firstname,
-                Lastname = customer.Lastname
-            });
+            Storage.AddCustomer(customer);
 
-            return newId;
+            return Ok();
         }
 
     }

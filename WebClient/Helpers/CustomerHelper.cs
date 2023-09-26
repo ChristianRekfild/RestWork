@@ -10,23 +10,17 @@ namespace WebClient.Helpers
     {
         public static Customer CreateRandCustomerWithoutCreating()
         {
+            Random rand = new Random();
+
+            int randomId = rand.Next(1, int.MaxValue);
             var customer = new Customer()
             {
-                Id = GetNewCustomerId(),
+                Id = randomId,
                 Firstname = GetNewCustomerFirstName(),
                 Lastname = GetNewCustomerLastName()
             };
 
             return customer;
-        }
-
-        private static long GetNewCustomerId()
-        {
-            int id = 0;
-            //var maxId = Storage.GetCustomers().Max(x => x.Id);
-            //long newCustomerId = maxId + 1;
-
-            return id;
         }
 
         private static string GetNewCustomerFirstName()

@@ -32,8 +32,11 @@ namespace WebClient
                             Console.WriteLine($"Firstname = {cust.Firstname}, Lastname = {cust.Lastname}");
                             break;
                         case 2:
-                            CustomerCreateRequest customer = RandomCustomer();
-                            Console.WriteLine($"Firstname = {customer.Firstname}, Lastname = {customer.Lastname}");
+                            var request = RandomCustomer();
+                            if (request is null)
+                                Console.WriteLine("Ошибка. Скорее всего пользователь с таким Id уже был добавлен");
+                            if (request != null)
+                                Console.WriteLine($"Добавлен пользователь. Firstname = {request.Firstname}, Lastname = {request.Lastname}");
                             break;
 
                     }
@@ -49,17 +52,24 @@ namespace WebClient
 
         private static CustomerCreateRequest RandomCustomer()
         {
-            Customer newCstomer = CustomerHelper.CreateRandCustomerWithoutCreating();
+            Customer newCustomer = CustomerHelper.CreateRandCustomerWithoutCreating();
 
             HttpResponseMessage response = client.PostAsJsonAsync(
-                "http://localhost:5000/customers/", newCstomer).Result;
+                "http://localhost:5000/customers/", newCustomer).Result;
 
-            // Получили id последнего клиента, которого мы создали
-            var cont = response.Content.ReadAsStringAsync().Result;
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                return new CustomerCreateRequest()
+                {
+                    Firstname = newCustomer.Firstname, Lastname = newCustomer.Lastname
+                };
 
-            var CustomerCreateRequest = GetCustomerById(int.Parse(cont));
+            if (response.StatusCode == System.Net.HttpStatusCode.Conflict)
+            {
+                return null;
+            }
 
-            return CustomerCreateRequest;
+            // Заглушка, по идее никогда не должна сработать
+            return null;
         }
 
         private static CustomerCreateRequest GetCustomerById(int id)
